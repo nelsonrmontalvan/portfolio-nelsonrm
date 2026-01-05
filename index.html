@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nelsonrmontalvan | Full Stack & Data Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://drive.google.com/uc?id=1smwx3hfgEKff_tRSVenyCqFqYuqljM-p">
+    <link rel="apple-touch-icon" href="https://drive.google.com/uc?id=1smwx3hfgEKff_tRSVenyCqFqYuqljM-p">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .text-gradient { background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover:hover { border-color: rgba(56, 189, 248, 0.5); transform: translateY(-5px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-[#0b0f1a] text-gray-300 selection:bg-sky-500/30 overflow-x-hidden">
+
+<nav class="fixed w-full z-50 glass py-4 px-6 flex justify-between items-center">
+    <div class="text-xl font-bold text-white tracking-tighter">NELSONRMONTALVAN<span class="text-sky-400">.DEV</span></div>
+    
+    <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-medium items-center text-white">
+        <a href="#inicio" data-i18n="navInicio" class="hover:text-sky-400 transition">Inicio</a>
+        <a href="#sobre-mi" data-i18n="navSobre" class="hover:text-sky-400 transition">Sobre mí</a>
+        <a href="#proyectos" data-i18n="navProyectos" class="hover:text-sky-400 transition">Proyectos</a>
+        <a href="#stack" data-i18n="navHabilidades" class="hover:text-sky-400 transition">Habilidades</a>
+        
+        <button id="language-toggle" class="flex items-center gap-2 border border-white/20 px-3 py-1.5 rounded-lg hover:bg-white/5 transition text-xs font-bold text-sky-400">
+            <i class="bi bi-translate"></i><span id="lang-label">EN</span>
+        </button>
+
+        <a href="https://drive.google.com/file/d/17pt7besK7rCa1ICFZMkpnlbR_rg2IP2g/view?usp=sharing" target="_blank" data-i18n="navCV" class="bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-500 transition">CV Online</a>
+    </div>
+
+    <button onclick="toggleMobileMenu()" class="md:hidden text-sky-400 text-3xl focus:outline-none">
+        <i id="menu-icon" class="bi bi-list"></i>
+    </button>
+
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#0a0f1a]/95 backdrop-blur-xl border-b border-white/10 flex flex-col items-center gap-6 py-8 text-white md:hidden animate-fade-in">
+        <a href="#inicio" onclick="toggleMobileMenu()" data-i18n="navInicio" class="hover:text-sky-400 transition text-sm uppercase tracking-widest font-medium">Inicio</a>
+        <a href="#sobre-mi" onclick="toggleMobileMenu()" data-i18n="navSobre" class="hover:text-sky-400 transition text-sm uppercase tracking-widest font-medium">Sobre mí</a>
+        <a href="#proyectos" onclick="toggleMobileMenu()" data-i18n="navProyectos" class="hover:text-sky-400 transition text-sm uppercase tracking-widest font-medium">Proyectos</a>
+        <a href="#stack" onclick="toggleMobileMenu()" data-i18n="navHabilidades" class="hover:text-sky-400 transition text-sm uppercase tracking-widest font-medium">Habilidades</a>
+        
+        <div class="flex flex-col gap-4 w-full px-10">
+            <button onclick="document.getElementById('language-toggle').click()" class="flex justify-center items-center gap-2 border border-white/20 px-3 py-3 rounded-lg text-xs font-bold text-sky-400">
+                <i class="bi bi-translate"></i><span>CAMBIAR IDIOMA</span>
+            </button>
+            <a href="https://drive.google.com/file/d/17pt7besK7rCa1ICFZMkpnlbR_rg2IP2g/view?usp=sharing" target="_blank" data-i18n="navCV" class="bg-sky-600 text-white px-4 py-3 rounded-lg text-center font-bold">CV Online</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        menu.classList.toggle('hidden');
+        
+        // Cambia icono entre Hamburguesa y X
+        if (menu.classList.contains('hidden')) {
+            icon.classList.replace('bi-x', 'bi-list');
+        } else {
+            icon.classList.replace('bi-list', 'bi-x');
+        }
+    }
+</script>
+
+    <section id="inicio" class="min-h-screen flex items-center pt-20 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span data-i18n="heroSub" class="text-sky-400 font-mono mb-4 block text-lg uppercase tracking-wider">Software Project Manager & Solutions Architect.</span>
+                <h1 data-i18n="heroTitle" class="text-5xl md:text-7xl font-extrabold text-white leading-tight">
+                    Transformo <span class="text-gradient">Ideas</span> en Experiencias Visuales.
+                </h1>
+                <p data-i18n="heroDesc" class="mt-6 text-gray-400 text-lg max-w-xl leading-relaxed">
+                    Especialista en UX - UI de alto impacto y automatización inteligente. Conecto el diseño moderno con la eficiencia de las bases de datos ...
+                </p>
+                <div class="mt-10 flex gap-4">
+                    <a href="https://drive.google.com/file/d/17pt7besK7rCa1ICFZMkpnlbR_rg2IP2g/view?usp=sharing" data-i18n="btnProyectos" class="bg-sky-600 text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all">Ver mi CV</a>
+                    <a href="#stack" data-i18n="btnStack" class="border border-white/20 px-8 py-4 rounded-xl font-bold hover:bg-white/5 transition-all">Mi Stack</a>
+                </div>
+            </div>
+            
+            <div data-aos="zoom-in" class="glass rounded-3xl p-4 relative group">
+                <div class="absolute inset-0 bg-sky-500/10 blur-3xl group-hover:bg-sky-500/20 transition-all"></div>
+                <div class="relative bg-[#161b2a] rounded-2xl border border-white/5 p-6 shadow-2xl">
+                    <div class="flex gap-2 mb-6 text-xs font-mono items-center justify-between">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <span class="text-sky-400/50 uppercase tracking-widest" data-i18n="liveView">Live View</span>
+                    </div>
+                    <h4 class="text-white font-bold mb-4">VeloCar ERP System</h4>
+                    <div class="space-y-4">
+                        <div class="h-32 w-full bg-gradient-to-t from-sky-500/20 to-transparent rounded-lg border-b border-sky-500/50 flex items-end p-2 gap-1">
+                            <div class="h-[40%] w-full bg-sky-500/40 rounded-t-sm animate-pulse"></div>
+                            <div class="h-[70%] w-full bg-sky-500/60 rounded-t-sm animate-pulse"></div>
+                            <div class="h-[50%] w-full bg-sky-500/40 rounded-t-sm animate-pulse"></div>
+                            <div class="h-[90%] w-full bg-sky-500/80 rounded-t-sm animate-pulse"></div>
+                        </div>
+                        <div class="flex justify-between text-[10px] font-mono">
+                            <span class="text-gray-500 uppercase tracking-widest">SQL DB: Connected</span>
+                            <span data-i18n="syncing" class="text-green-400 italic">Sincronizando con Apps Script...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="py-24 px-6 max-w-7xl mx-auto overflow-hidden">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+        
+        <div class="relative order-2 md:order-1" data-aos="fade-right">
+            <div class="absolute -inset-10 bg-sky-500/20 rounded-full blur-3xl animate-pulse"></div>
+            
+            <div class="relative z-10 bg-[#161b2a] border border-white/10 p-3 rounded-[2rem] shadow-2xl overflow-hidden group">
+                <img src="https://lh3.googleusercontent.com/d/1G8Myatm9Efy9_fkrbpUXwMERGe1X4MNL" 
+     alt="Nelson Rodríguez - Software Project Manager" 
+     class="w-full aspect-[4/5] object-cover rounded-[1.5rem] grayscale group-hover:grayscale-0 transition duration-700 ease-in-out">
+                
+                <div class="absolute bottom-6 left-6 right-6 glass p-4 rounded-2xl border border-white/10">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-sky-400" data-i18n="aboutStatus">Software Project Manager & Consultant</span>
+                        <div class="flex gap-1">
+                            <div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping"></div>
+                            <span class="text-[9px] text-green-400 font-bold uppercase">Available for Projects</span>
+                        </div>
+                    </div>
+                    <p class="text-white text-xs italic font-medium" data-i18n="aboutQuote">"Optimizing business through data architecture and technical leadership."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-1 md:order-2" data-aos="fade-left">
+            <h2 data-i18n="aboutTitle" class="text-4xl font-bold text-white mb-6">
+                Liderazgo Estratégico y <span class="text-gradient">Arquitectura de Soluciones</span>
+            </h2>
+            
+            <div class="space-y-5 text-gray-400 text-lg leading-relaxed">
+                <p data-i18n="aboutP1">
+                    Como Software Project Manager e Ingeniero de Sistemas, lidero el ciclo completo de desarrollo de software desde 2018, garantizando entregas alineadas con los objetivos de negocio.
+                </p>
+                
+                <p data-i18n="aboutP2">
+                    Mi valor diferencial reside en la convergencia de un FrontEnd de alto impacto (UX-UI) con una gestión rigurosa basada en estándares internacionales como ISO/IEC 9001 y marcos de gobernanza COBIT 5.0.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 py-6 border-y border-white/5">
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-2 uppercase tracking-widest"><i class="bi bi-gear-wide-connected text-sky-400 mr-2"></i> Gestión Pro</h4>
+                        <ul class="text-xs space-y-2">
+                            <li data-i18n="skill1">Agile / Scrum / Waterfall</li>
+                            <li data-i18n="skill2">Gestión de Stakeholders</li>
+                            <li data-i18n="skill3">Control de Presupuesto</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-sm mb-2 uppercase tracking-widest"><i class="bi bi-code-slash text-indigo-400 mr-2"></i> Desarrollo</h4>
+                        <ul class="text-xs space-y-2">
+                            <li data-i18n="skill4">FrontEnd UI-UX Avanzado</li>
+                            <li data-i18n="skill5">Automatización Apps Script</li>
+                            <li data-i18n="skill6">Bases de Datos SQL / MySQL</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p data-i18n="aboutP3">
+                    Especializado en la creación y actualización de CRMs y ERPs, mi metodología asegura la escalabilidad de los sistemas y la optimización de procesos internos mediante automatización inteligente.
+                </p>
+            </div>
+            
+            <div class="mt-8 flex flex-wrap gap-2 text-[9px] font-extrabold uppercase tracking-widest">
+                <span class="px-3 py-1 bg-sky-500/10 text-sky-400 border border-sky-500/20 rounded">ISO/IEC 20000</span>
+                <span class="px-3 py-1 bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded">ITIL Foundations</span>
+                <span class="px-3 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded">MICITT Cybersecurity</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="proyectos" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 data-i18n="proyectosTitle" class="text-4xl font-bold text-white">Proyectos Destacados</h2>
+                <p data-i18n="proyectosSub" class="text-gray-400 mt-2 text-lg italic underline decoration-sky-500">Lo más reciente de mi laboratorio</p>
+            </div>
+           <a href="javascript:void(0)" 
+   onclick="toggleModal('modal-galeria')" 
+   data-i18n="allProjects" 
+   class="text-sky-400 hover:text-sky-300 font-bold uppercase text-xs tracking-widest transition-all group flex items-center gap-2">
+    Ver galería completa <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i></a>
+        </div>
+
+        <!-- PROJECT CARDS 1 -->
+<div class="grid md:grid-cols-2 gap-10">
+    <div data-aos="fade-up" class="group">
+        <div class="relative z-10 bg-[#161b2a] border border-white/10 p-3 rounded-[2rem] shadow-2xl overflow-hidden">
+            <div class="aspect-video overflow-hidden rounded-[1.5rem]">
+                <img src="https://plus.unsplash.com/premium_photo-1720589103335-43589b70bd20?q=80&w=1332&auto=format&fit=crop" 
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 ease-in-out scale-105 group-hover:scale-100">
+            </div>
+            <div class="absolute top-6 right-6">
+                <span class="bg-sky-500/20 text-sky-400 text-[10px] font-bold px-3 py-1 rounded-full border border-sky-500/30 backdrop-blur-md">
+                    ERP SYSTEM
+                </span>
+            </div>
+        </div>
+
+        <div class="mt-6 px-4">
+            <h3 data-i18n="p1Title" class="text-2xl font-bold text-white mb-2">Sistema SIGA 2026</h3>
+            <p data-i18n="p1Desc" class="text-gray-400 text-sm leading-relaxed mb-4">
+                Gestión académica integral con arquitectura de datos escalable y sincronización en tiempo real.
+            </p>
+            <div class="flex justify-between items-center">
+                <div class="flex gap-3 text-[10px] font-bold uppercase tracking-tighter text-sky-400/70">
+                    <span>Html 5</span> • <span>API Rest Auth</span> • <span>Tailwind UI</span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://github.com/nelsonrmontalvan/plataforma-Siga.git" target="_blank" class="text-gray-500 hover:text-white transition-colors" title="GitHub Repo">
+                        <i class="bi bi-github text-lg"></i>
+                    </a>
+                    <a href="https://plataforma-siga.vercel.app/" target="_blank"class="text-gray-500 hover:text-sky-400 transition-colors" title="Live Demo">
+                        <i class="bi bi-box-arrow-up-right text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="200" class="group">
+        <div class="relative z-10 bg-[#161b2a] border border-white/10 p-3 rounded-[2rem] shadow-2xl overflow-hidden">
+            <div class="aspect-video overflow-hidden rounded-[1.5rem]">
+                <img src="https://images.pexels.com/photos/12932587/pexels-photo-12932587.png" 
+                     class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 ease-in-out scale-105 group-hover:scale-100">
+            </div>
+            <div class="absolute top-6 right-6">
+                <span class="bg-sky-500/20 text-sky-400 text-[10px] font-bold px-3 py-1 rounded-full border border-sky-500/30 backdrop-blur-md">
+                    ERP SYSTEM
+                </span>
+            </div>
+        </div>
+
+        <div class="mt-6 px-4">
+            <h3 data-i18n="p2Title" class="text-2xl font-bold text-white mb-2">Registra-ME</h3>
+            <p data-i18n="p2Desc" class="text-gray-400 text-sm leading-relaxed mb-4">
+                Plataforma para docentes de seguimiento Academico los estudiantes y sincronización en tiempo real.
+            </p>
+            <div class="flex justify-between items-center">
+                <div class="flex gap-3 text-[10px] font-bold uppercase tracking-tighter text-sky-400/70">
+                    <span>Base de datos</span> • <span>Tailwind CSS</span> • <span>HTML5</span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="https://github.com/nelsonrmontalvan/Registra-ME.git" target="_blank" class="text-gray-500 hover:text-white transition-colors" title="GitHub Repo">
+                        <i class="bi bi-github text-lg"></i>
+                    </a>
+                    <a href="https://registra-me.vercel.app/" target="_blank"class="text-gray-500 hover:text-sky-400 transition-colors" title="Live Demo">
+                        <i class="bi bi-box-arrow-up-right text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- FIN PROJECT CARDS 1 -->
+   
+    </section>
+
+    <section id="stack" class="py-24 px-6 bg-[#0d121f]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 data-i18n="stackTitle" class="text-3xl md:text-5xl font-bold text-white mb-4">Stack Tecnológico</h2>
+                <div class="h-1 w-20 bg-sky-500 mx-auto rounded-full"></div>
+                <p data-i18n="stackSub" class="text-gray-400 mt-6 max-w-2xl mx-auto">Dominio de herramientas de vanguardia para crear soluciones escalables.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-sm">
+                <div class="glass p-8 rounded-3xl border-b-4 border-sky-500" data-aos="fade-right">
+                    <i class="bi bi-layout-wtf text-sky-400 text-3xl mb-6 block"></i>
+                    <h3 data-i18n="s1Title" class="text-xl font-bold text-white mb-4">Front-End Master</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><i class="bi bi-check2 text-sky-400 mr-2"></i> HTML5 / CSS3 / JavaScript</li>
+                        <li><i class="bi bi-check2 text-sky-400 mr-2"></i> Tailwind CSS & Bootstrap</li>
+                    </ul>
+                </div>
+                <div class="glass p-8 rounded-3xl border-b-4 border-indigo-500" data-aos="fade-up">
+                    <i class="bi bi-database-fill text-indigo-400 text-3xl mb-6 block"></i>
+                    <h3 data-i18n="s2Title" class="text-xl font-bold text-white mb-4">Data & Automation</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><i class="bi bi-check2 text-indigo-400 mr-2"></i> SQL / MySQL / Sheets DB</li>
+                        <li><i class="bi bi-check2 text-indigo-400 mr-2"></i> Google Apps Script Expert</li>
+                    </ul>
+                </div>
+                <div class="glass p-8 rounded-3xl border-b-4 border-purple-500" data-aos="fade-left">
+                    <i class="bi bi-wordpress text-purple-400 text-3xl mb-6 block"></i>
+                    <h3 data-i18n="s3Title" class="text-xl font-bold text-white mb-4">CMS & Ecosystem</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><i class="bi bi-check2 text-purple-400 mr-2"></i> WordPress Full Custom</li>
+                        <li><i class="bi bi-check2 text-purple-400 mr-2"></i> Hosting & Cloud Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative" data-aos="fade-right">
+                <div class="absolute -inset-4 bg-gradient-to-r from-sky-500 to-indigo-600 rounded-3xl blur opacity-20"></div>
+                <div class="relative bg-[#161b2a] border border-white/10 p-2 rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1000" class="rounded-2xl grayscale hover:grayscale-0 transition duration-700">
+                    <div class="absolute bottom-4 left-4 right-4 glass p-4 rounded-xl">
+                        <p data-i18n="quote" class="text-white text-xs font-bold text-center italic">"Creyente en el potencial de las personas y apasionado por la tecnología."</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <h2 data-i18n="sobreTitulo" class="text-4xl font-bold text-white mb-6">Detrás del <span class="text-sky-400">&lt;Código /&gt;</span></h2>
+                <div class="space-y-4 text-gray-400 text-lg leading-relaxed">
+                    <p data-i18n="sobreP1">Soy un profesional apasionado por el desarrollo web y la arquitectura de datos, pero sobre todo, soy un <span class="text-white font-semibold">docente de corazón</span>.</p>
+                    <p data-i18n="sobreP2">Con años de experiencia en el ecosistema de Google y WordPress, simplifico la tecnología para crear impacto.</p>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
+                            <h4 class="text-3xl font-bold text-sky-400">+30</h4>
+                            <p data-i18n="stat1" class="text-xs uppercase tracking-widest font-bold">Proyectos Entregados</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
+                            <h4 class="text-3xl font-bold text-indigo-400">100%</h4>
+                            <p data-i18n="stat2" class="text-xs uppercase tracking-widest font-bold">Pasión por Enseñar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="glass p-10 rounded-3xl" data-aos="zoom-in">
+            <div class="text-center mb-10">
+                <h2 data-i18n="contTitle" class="text-3xl font-bold text-white italic">¿Tienes un proyecto en mente?</h2>
+                <p data-i18n="contSub" class="text-gray-400 mt-2">Llevemos tu IDEA al siguiente nivel.</p>
+            </div>
+
+            <form id="contact-form" action="https://script.google.com/macros/s/AKfycbwQ5ONmU1X8i_R7eWvUSCEXJCzdxaBASQIdDTCL4ZBa4NCcVxvfLRYxLXyah6gvPEcFuA/exec" method="POST" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label data-i18n="labelName" class="block text-xs font-bold uppercase text-sky-400 mb-2">Nombre</label>
+                        <input type="text" name="nombre" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 transition">
+                    </div>
+                    <div>
+                        <label data-i18n="labelEmail" class="block text-xs font-bold uppercase text-sky-400 mb-2">Email</label>
+                        <input type="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 transition">
+                    </div>
+                </div>
+                <div>
+                    <label data-i18n="labelMsg" class="block text-xs font-bold uppercase text-sky-400 mb-2">Mensaje</label>
+                    <textarea name="mensaje" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-sky-500 transition"></textarea>
+                </div>
+                <button type="submit" id="submit-btn" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+                    <span data-i18n="btnSend">Enviar Propuesta</span><i class="bi bi-send"></i>
+                </button>
+            </form>
+            <div id="form-status" class="hidden mt-6 p-4 rounded-xl text-center font-bold"></div>
+        </div>
+    </section>
+
+<div id="modal-galeria" class="hidden fixed inset-0 z-[100] w-full h-full p-4 md:p-10">
+    <div class="absolute inset-0 bg-[#0a0f1a]/95 backdrop-blur-xl transition-opacity duration-500" onclick="toggleModal('modal-galeria')"></div>
+
+    <div id="modal-content" class="relative bg-[#111625] border border-white/10 w-full max-w-7xl mx-auto h-full rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col transform transition-all duration-500 scale-95 opacity-0">
+        
+        <div class="p-8 border-b border-white/5 flex justify-between items-center">
+            <div>
+                <h2 class="text-2xl font-bold text-white">Portafolio <span class="text-sky-400">Extendido</span></h2>
+                <p class="text-gray-500 text-[10px] uppercase tracking-widest">Soluciones escalables y arquitectura de datos</p>
+            </div>
+            <button onclick="toggleModal('modal-galeria')" class="text-gray-400 hover:text-white hover:rotate-90 transition-all duration-300">
+                <i class="bi bi-x-circle text-3xl"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-8"> 
+
+<d<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <div data-aos="fade-up" data-aos-delay="100" class="group bg-[#161b2a] border border-white/10 p-3 rounded-[2rem] shadow-lg hover:border-sky-500/50 transition-all duration-500">
+        <div class="aspect-square overflow-hidden rounded-[1.5rem] mb-4">
+            <img src="https://images.pexels.com/photos/6870317/pexels-photo-6870317.jpeg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="px-2">
+            <h4 class="text-white font-bold text-sm mb-1">VELOCAR - GESTIÓN PARA TALLER</h4>
+            <div class="flex justify-between items-center">
+                <span class="text-sky-400 text-[9px] uppercase font-bold tracking-widest">ERP</span>
+                <a href="https://script.google.com/macros/s/AKfycbyM3d1v34Wi0I8ZJpA8fDdYXOxm_SyfmlFULIa0XBwyXn29QJ6IQcQLiOHQ9RkI3oLT/exec" target="_blank" class="text-gray-500 hover:text-white transition-colors">
+                    <i class="bi bi-box-arrow-up-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="200" class="group bg-[#161b2a] border border-white/10 p-3 rounded-[2rem] shadow-lg hover:border-sky-500/50 transition-all duration-500">
+        <div class="aspect-square overflow-hidden rounded-[1.5rem] mb-4">
+            <img src="https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="px-2">
+            <h4 class="text-white font-bold text-sm mb-1">Mi Landing Page</h4>
+            <div class="flex justify-between items-center">
+                <span class="text-sky-400 text-[9px] uppercase font-bold tracking-widest">Analytics</span>
+                <a href="https://script.google.com/macros/s/AKfycby33u7zXKUfU4ftlta180iK0iNXKmcmIHg1fUIUpmPGl4H6UW50Lzu5q_q8oYfYEKfu/exec" target="_blank" class="text-gray-500 hover:text-white transition-colors">
+                    <i class="bi bi-box-arrow-up-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="300" class="group bg-[#161b2a] border border-white/10 p-3 rounded-[2rem] shadow-lg hover:border-sky-500/50 transition-all duration-500">
+        <div class="aspect-square overflow-hidden rounded-[1.5rem] mb-4">
+            <img src="https://images.pexels.com/photos/4484155/pexels-photo-4484155.jpeg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="px-2">
+            <h4 class="text-white font-bold text-sm mb-1">Control de Tienda-Inventario</h4>
+            <div class="flex justify-between items-center">
+                <span class="text-sky-400 text-[9px] uppercase font-bold tracking-widest">ERP - CRM</span>
+                <a href="https://script.google.com/macros/s/AKfycbwI9VjqvqE1ZLOxwtsrTseMikQwvVUtGsApfiwxAN2QOP2muC_Z0boONslLm_YThbhyDA/exec" target="_blank" class="text-gray-500 hover:text-white transition-colors">
+                    <i class="bi bi-box-arrow-up-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="400" class="group bg-[#161b2a] border border-white/10 p-3 rounded-[2rem] shadow-lg hover:border-sky-500/50 transition-all duration-500">
+        <div class="aspect-square overflow-hidden rounded-[1.5rem] mb-4">
+            <img src="https://d1ih8jugeo2m5m.cloudfront.net/2024/07/pagina_en_construccion.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+        </div>
+        <div class="px-2">
+            <h4 class="text-white font-bold text-sm mb-1">Sistema LMS Learning </h4>
+            <div class="flex justify-between items-center">
+                <span class="text-sky-400 text-[9px] uppercase font-bold tracking-widest">Académico</span>
+                <a href="#" target="_blank" class="text-gray-500 hover:text-white transition-colors">
+                    <i class="bi bi-box-arrow-up-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+        </div>
+    </div>
+</div>
+
+<script>
+function toggleModal(modalID) {
+    const modal = document.getElementById(modalID);
+    const content = document.getElementById('modal-content');
+    
+    if (modal.classList.contains('hidden')) {
+        // ABRIR
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+        
+        // El delay clave para que todo fluya
+        setTimeout(() => {
+            content.classList.remove('scale-95', 'opacity-0');
+            content.classList.add('scale-100', 'opacity-100');
+            // Refrescamos AOS aquí para que las 4 tarjetas suban en cascada
+            AOS.refresh(); 
+        }, 10);
+    } else {
+        // CERRAR
+        content.classList.remove('scale-100', 'opacity-100');
+        content.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }, 300);
+    }
+}
+</script>
+
+    <footer class="py-12 px-6 border-t border-white/5 bg-[#080b14]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <div class="text-2xl font-bold text-white tracking-tighter mb-2">NELSONRMONTALVAN<span class="text-sky-400">.DEV</span></div>
+                <p class="text-gray-500 text-xs">Software Project Manager e Ingeniero de Sistemas.</p>
+            </div>
+            <div class="flex gap-6 text-2xl">
+                <a href="https://github.com/nelsonrmontalvan" target="_blank" class="text-gray-400 hover:text-sky-400 transition"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/nelsonrmontalvan/" target="_blank" class="text-gray-400 hover:text-sky-400 transition"><i class="bi bi-linkedin"></i></a>
+                <a href="https://wa.me/50671023115" target="_blank" class="text-gray-400 hover:text-sky-400 transition"><i class="bi bi-whatsapp"></i></a>
+                <a href="mailto:nelson.rmontalvan@gmail.com" class="text-gray-400 hover:text-sky-400 transition" title="Enviar Email"><i class="bi bi-envelope-at"></i>
+</a>
+            </div>
+            <p class="text-gray-500 text-xs text-center">© 2026 Software Project Manager & Solutions Architect.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: false, mirror: true });
+
+        // DICCIONARIO I18N
+        const translations = {
+            es: {
+                aboutTitle: "Liderazgo Estratégico y <span class='text-gradient'>Arquitectura de Soluciones</span>",
+                aboutStatus: "Software Project Manager & Consultor",
+                aboutQuote: "\"Optimizando negocios mediante arquitectura de datos y liderazgo técnico.\"",
+                aboutP1: "Como Software Project Manager e Ingeniero de Sistemas, lidero proyectos de software web desde 2018, definiendo alcances, presupuestos y criterios de éxito[cite: 42, 43, 44].",
+                aboutP2: "Mi enfoque integra un FrontEnd de alto impacto con estándares internacionales de calidad (ISO/IEC) y gobernanza de TI (COBIT 5.0).",
+                aboutP3: "Especializado en CRMs y ERPs, gestiono equipos multidisciplinarios para entregar soluciones robustas, seguras y escalables bajo metodologías Ágiles[cite: 36, 39, 45].",
+                skill1: "Agile / Scrum / Waterfall", skill2: "Gestión de Stakeholders", skill3: "Control Presupuestario",
+                skill4: "FrontEnd UI-UX Avanzado", skill5: "Automatización Apps Script", skill6: "Bases de Datos SQL",
+                navInicio: "Inicio", navProyectos: "Proyectos", navHabilidades: "Habilidades", navCV: "CV Online",
+                heroSub: "Front-End Developer & Docente Tech", heroTitle: "Transformo <span class='text-gradient'>Datos</span> en Experiencias Visuales.",
+                heroDesc: "Especialista en UX - UI de alto impacto y automatización inteligente. Conecto el diseño moderno con la eficiencia de las bases de datos .",
+                btnProyectos: "Ver mi CV", btnStack: "Mi Stack", liveView: "Vista en Vivo", syncing: "Sincronizando con Apps Script...",
+                proyectosTitle: "Proyectos Destacados", proyectosSub: "Lo más reciente de mi laboratorio", allProjects: "Ver galería completa →",
+                p1Title: "Sistema SIGA 2026", p1Desc: "Gestión completa de inventarios y facturación usando Google Apps Script.",
+                p2Title: "Registra-ME", p2Desc: "Plataforma para docentes de seguimiento Academico los estudiantes y sincronización en tiempo real.",
+                stackTitle: "Stack Tecnológico", stackSub: "Dominio de herramientas de vanguardia para crear soluciones escalables.",
+                s1Title: "Front-End Master", s2Title: "Data & Automation", s3Title: "CMS & Ecosystem",
+                sobreTitulo: "Detrás del <span class='text-sky-400'>&lt;Código /&gt;</span>",
+                sobreP1: "Soy un profesional apasionado por el desarrollo web, pero sobre todo, soy un <span class='text-white font-semibold'>docente de corazón</span>.",
+                sobreP2: "Con años de experiencia en el ecosistema de Google y WordPress, simplifico la tecnología para crear impacto.",
+                stat1: "Proyectos Entregados", stat2: "Pasión por Enseñar", quote: "\"Creyente en el potencial de las personas y apasionado por la tecnología.\"",
+                contTitle: "¿Tienes un proyecto en mente?", contSub: "Llevemos tus datos al siguiente nivel.",
+                labelName: "Nombre", labelEmail: "Email", labelMsg: "Mensaje", btnSend: "Enviar Propuesta", langLabel: "EN"
+            },
+            en: {
+                aboutTitle: "Strategic Leadership & <span class='text-gradient'>Solutions Architecture</span>",
+                aboutStatus: "Software Project Manager & Consultant",
+                aboutQuote: "\"Optimizing business through data architecture and technical leadership.\"",
+                aboutP1: "As a Software Project Manager and Systems Engineer, I have planned and executed web software projects since 2018, defining scope, budgets, and success criteria[cite: 42, 43, 44].",
+                aboutP2: "My approach integrates high-impact FrontEnd with international quality standards (ISO/IEC) and IT governance (COBIT 5.0).",
+                aboutP3: "Specialized in CRMs and ERPs, I manage multidisciplinary teams to deliver robust, secure, and scalable solutions under Agile methodologies[cite: 36, 39, 45].",
+                skill1: "Agile / Scrum / Waterfall", skill2: "Stakeholder Management", skill3: "Budget Control",
+                skill4: "Advanced UI-UX FrontEnd", skill5: "Apps Script Automation", skill6: "SQL Databases",
+                navInicio: "Home", navProyectos: "Projects", navHabilidades: "Skills", navCV: "Online CV",
+                heroSub: "Front-End Developer & Tech Instructor", heroTitle: "Transforming <span class='text-gradient'>Data</span> into Visual Experiences.",
+                heroDesc: "Specialist in high-impact UX/UI and intelligent automation. I connect modern design with database efficiency..",
+                btnProyectos: "View my CV", btnStack: "My Stack", liveView: "Live View", syncing: "Syncing with Apps Script...",
+                proyectosTitle: "Featured Projects", proyectosSub: "The latest from my laboratory", allProjects: "View full gallery →",
+                p1Title: "Sistema SIGA 2026", p1Desc: "Comprehensive academic management with scalable data architecture and real-time synchronization.",
+                p2Title: "Registra-ME", p2Desc: "Platform for teachers to monitor students' academic progress and synchronize in real time.",
+                stackTitle: "Tech Stack", stackSub: "Mastery of cutting-edge tools to create scalable business solutions.",
+                s1Title: "Front-End Master", s2Title: "Data & Automation", s3Title: "CMS & Ecosystem",
+                sobreTitulo: "Behind the <span class='text-sky-400'>&lt;Code /&gt;</span>",
+                sobreP1: "I am a professional passionate about web development, but above all, a <span class='text-white font-semibold'>teacher at heart</span>.",
+                sobreP2: "With years of experience in the Google and WordPress ecosystem, I simplify technology to create impact.",
+                stat1: "Projects Delivered", stat2: "Passion for Teaching", quote: "\"Believer in people's potential and passionate about technology.\"",
+                contTitle: "Have a project in mind?", contSub: "Let's take your data to the next level.",
+                labelName: "Name", labelEmail: "Email", labelMsg: "Message", btnSend: "Send Proposal", langLabel: "ES"
+            }
+        };
+
+        let currentLang = 'es';
+        document.getElementById('language-toggle').addEventListener('click', () => {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.innerHTML = translations[currentLang][key];
+            });
+            document.getElementById('lang-label').innerText = translations[currentLang].langLabel;
+            document.documentElement.lang = currentLang;
+        });
+
+        // FORMULARIO HANDLER
+        const form = document.getElementById('contact-form');
+        const status = document.getElementById('form-status');
+        const btn = document.getElementById('submit-btn');
+
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            btn.disabled = true;
+            btn.innerHTML = `<span>Enviando...</span> <i class="bi bi-arrow-repeat animate-spin"></i>`;
+            const formData = new FormData(form);
+            try {
+                await fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' });
+                status.classList.remove('hidden', 'bg-red-500/20', 'text-red-400');
+                status.classList.add('bg-green-500/20', 'text-green-400');
+                status.innerText = currentLang === 'es' ? "¡Mensaje enviado con éxito!" : "Message sent successfully!";
+                form.reset();
+            } catch (error) {
+                status.classList.remove('hidden');
+                status.classList.add('bg-red-500/20', 'text-red-400');
+                status.innerText = "Error!";
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = `<span data-i18n="btnSend">${translations[currentLang].btnSend}</span><i class="bi bi-send"></i>`;
+            }
+        };
+    </script>
+</body>
+</html>
