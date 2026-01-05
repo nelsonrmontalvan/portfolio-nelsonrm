@@ -19,9 +19,11 @@
 </head>
 <body class="bg-[#0b0f1a] text-gray-300 selection:bg-sky-500/30 overflow-x-hidden">
 
-<nav class="fixed w-full z-50 glass py-4 px-6 flex justify-between items-center">
-    <div class="text-xl font-bold text-white tracking-tighter">NELSONRMONTALVAN<span class="text-sky-400">.DEV</span></div>
-    
+<nav class="fixed w-full z-[100] glass py-4 px-6 flex justify-between items-center top-0 left-0">
+    <div class="text-xl font-bold text-white tracking-tighter shrink-0">
+        NELSONRMONTALVAN<span class="text-sky-400">.DEV</span>
+    </div>
+
     <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-medium items-center text-white">
         <a href="#inicio" data-i18n="navInicio" class="hover:text-sky-400 transition">Inicio</a>
         <a href="#sobre-mi" data-i18n="navSobre" class="hover:text-sky-400 transition">Sobre mí</a>
@@ -32,24 +34,24 @@
             <i class="bi bi-translate"></i><span id="lang-label">EN</span>
         </button>
 
-        <a href="https://drive.google.com/file/d/17pt7besK7rCa1ICFZMkpnlbR_rg2IP2g/view?usp=sharing" target="_blank" data-i18n="navCV" class="bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-500 transition">CV Online</a>
+        <a href="https://drive.google.com/file/d/17pt7besK7rCa1ICFZMkpnlbR_rg2IP2g/view?usp=sharing" target="_blank" data-i18n="navCV" class="bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-500 transition shadow-lg shadow-sky-600/20">CV Online</a>
     </div>
 
-    <button onclick="toggleMobileMenu()" class="md:hidden text-sky-400 text-3xl focus:outline-none">
+    <button onclick="toggleMobileMenu()" class="md:hidden text-sky-400 text-3xl focus:outline-none p-2 z-[110]" aria-label="Menu">
         <i id="menu-icon" class="bi bi-list"></i>
     </button>
 
-    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#0a0f1a]/95 backdrop-blur-xl border-b border-white/10 flex flex-col items-center gap-6 py-8 text-white md:hidden animate-fade-in">
-        <a href="#inicio" onclick="toggleMobileMenu()" data-i18n="navInicio" class="hover:text-sky-400 transition text-sm uppercase tracking-widest font-medium">Inicio</a>
-        <a href="#sobre-mi" onclick="toggleMobileMenu()" data-i18n="navSobre" class="hover:text-sky-400 transition text-sm uppercase tracking-widest font-medium">Sobre mí</a>
-        <a href="#proyectos" onclick="toggleMobileMenu()" data-i18n="navProyectos" class="hover:text-sky-400 transition text-sm uppercase tracking-widest font-medium">Proyectos</a>
-        <a href="#stack" onclick="toggleMobileMenu()" data-i18n="navHabilidades" class="hover:text-sky-400 transition text-sm uppercase tracking-widest font-medium">Habilidades</a>
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-screen bg-[#0a0f1a]/98 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 text-white z-[105] animate-fade-in">
+        <a href="#inicio" onclick="toggleMobileMenu()" data-i18n="navInicio" class="text-xl uppercase tracking-widest font-bold hover:text-sky-400">Inicio</a>
+        <a href="#sobre-mi" onclick="toggleMobileMenu()" data-i18n="navSobre" class="text-xl uppercase tracking-widest font-bold hover:text-sky-400">Sobre mí</a>
+        <a href="#proyectos" onclick="toggleMobileMenu()" data-i18n="navProyectos" class="text-xl uppercase tracking-widest font-bold hover:text-sky-400">Proyectos</a>
+        <a href="#stack" onclick="toggleMobileMenu()" data-i18n="navHabilidades" class="text-xl uppercase tracking-widest font-bold hover:text-sky-400">Habilidades</a>
         
-        <div class="flex flex-col gap-4 w-full px-10">
-            <button onclick="document.getElementById('language-toggle').click()" class="flex justify-center items-center gap-2 border border-white/20 px-3 py-3 rounded-lg text-xs font-bold text-sky-400">
+        <div class="flex flex-col gap-5 w-full px-12 mt-4">
+            <button onclick="document.getElementById('language-toggle').click()" class="flex justify-center items-center gap-3 border border-sky-500/30 px-6 py-4 rounded-xl text-sm font-bold text-sky-400 bg-sky-500/5">
                 <i class="bi bi-translate"></i><span>CAMBIAR IDIOMA</span>
             </button>
-            <a href="https://drive.google.com/file/d/17pt7besK7rCa1ICFZMkpnlbR_rg2IP2g/view?usp=sharing" target="_blank" data-i18n="navCV" class="bg-sky-600 text-white px-4 py-3 rounded-lg text-center font-bold">CV Online</a>
+            <a href="https://drive.google.com/file/d/17pt7besK7rCa1ICFZMkpnlbR_rg2IP2g/view?usp=sharing" target="_blank" data-i18n="navCV" class="bg-sky-600 text-white px-6 py-4 rounded-xl text-center font-bold text-lg shadow-xl shadow-sky-600/30">CV Online</a>
         </div>
     </div>
 </nav>
