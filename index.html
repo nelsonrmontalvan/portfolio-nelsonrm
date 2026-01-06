@@ -42,6 +42,20 @@
     </div>
 </nav>
 
+<div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-screen bg-[#0a0f1a]/98 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 text-white z-[105] md:hidden animate-fade-in">
+    <a href="#inicio" onclick="toggleMobileMenu()" data-i18n="navInicio" class="text-xl font-bold hover:text-sky-400 uppercase tracking-widest">Inicio</a>
+    <a href="#sobre-mi" onclick="toggleMobileMenu()" data-i18n="navSobre" class="text-xl font-bold hover:text-sky-400 uppercase tracking-widest">Sobre mí</a>
+    <a href="#proyectos" onclick="toggleMobileMenu()" data-i18n="navProyectos" class="text-xl font-bold hover:text-sky-400 uppercase tracking-widest">Proyectos</a>
+    <a href="#stack" onclick="toggleMobileMenu()" data-i18n="navHabilidades" class="text-xl font-bold hover:text-sky-400 uppercase tracking-widest">Habilidades</a>
+    
+    <div class="flex flex-col gap-4 w-full px-12 mt-4">
+        <button onclick="document.getElementById('language-toggle').click(); toggleMobileMenu();" class="flex justify-center items-center gap-3 border border-sky-500/30 px-6 py-4 rounded-xl text-sm font-bold text-sky-400 bg-sky-500/5">
+            <i class="bi bi-translate"></i><span>CAMBIAR IDIOMA</span>
+        </button>
+        <a href="https://drive.google.com/file/d/17pt7besK7rCa1ICFZMkpnlbR_rg2IP2g/view?usp=sharing" target="_blank" data-i18n="navCV" class="bg-sky-600 text-white px-6 py-4 rounded-xl text-center font-bold text-lg">CV Online</a>
+    </div>
+</div>
+
 <script>
     function toggleMobileMenu() {
         const menu = document.getElementById('mobile-menu');
@@ -57,21 +71,27 @@
     }
 </script>
 
-    <section id="inicio" class="min-h-screen flex items-center pt-20 px-6 max-w-7xl mx-auto">
+    <section id="inicio" class="min-h-screen flex items-center pt-32 md:pt-20 px-6 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right">
-                <span data-i18n="heroSub" class="text-sky-400 font-mono mb-4 block text-lg uppercase tracking-wider">Software Project Manager & Solutions Architect.</span>
-                <h1 data-i18n="heroTitle" class="text-5xl md:text-7xl font-extrabold text-white leading-tight">
-                    Transformo <span class="text-gradient">Ideas</span> en Experiencias Visuales.
-                </h1>
-                <p data-i18n="heroDesc" class="mt-6 text-gray-400 text-lg max-w-xl leading-relaxed">
-                    Especialista en UX - UI de alto impacto y automatización inteligente. Conecto el diseño moderno con la eficiencia de las bases de datos ...
-                </p>
-                <div class="mt-10 flex gap-4">
-                    <a href="https://drive.google.com/file/d/17pt7besK7rCa1ICFZMkpnlbR_rg2IP2g/view?usp=sharing" data-i18n="btnProyectos" class="bg-sky-600 text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all">Ver mi CV</a>
-                    <a href="#stack" data-i18n="btnStack" class="border border-white/20 px-8 py-4 rounded-xl font-bold hover:bg-white/5 transition-all">Mi Stack</a>
-                </div>
-            </div>
+<div data-aos="fade-right">
+ <span data-i18n="heroSub" class="text-sky-400 font-mono mb-6 block text-lg uppercase tracking-wider leading-relaxed">
+    SOFTWARE PROJECT MANAGER <br class="block"> 
+    <span class="text-white/50">&</span> SOLUTIONS ARCHITECT.
+</span>
+
+    <h1 data-i18n="heroTitle" class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-[1.15] md:leading-tight mb-6">
+        Transformo <span class="text-gradient">Ideas</span> en <br class="hidden sm:block"> Experiencias Visuales.
+    </h1>
+
+    <p data-i18n="heroDesc" class="mt-6 text-gray-400 text-lg max-w-xl leading-relaxed">
+        Especialista en UX - UI de alto impacto y automatización inteligente. Conecto el diseño moderno con la eficiencia de las bases de datos...
+    </p>
+
+    <div class="mt-10 flex gap-4">
+        <a href="https://drive.google.com/file/d/17pt7besK7rCa1ICFZMkpnlbR_rg2IP2g/view?usp=sharing" target="_blank" data-i18n="btnProyectos" class="bg-sky-600 text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all shadow-lg shadow-sky-600/20">Ver mi CV</a>
+        <a href="#stack" data-i18n="btnStack" class="border border-white/20 text-white px-8 py-4 rounded-xl font-bold hover:bg-white/5 transition-all">Mi Stack</a>
+    </div>
+</div>
             
             <div data-aos="zoom-in" class="glass rounded-3xl p-4 relative group">
                 <div class="absolute inset-0 bg-sky-500/10 blur-3xl group-hover:bg-sky-500/20 transition-all"></div>
@@ -484,7 +504,7 @@ function toggleModal(modalID) {
                 <a href="mailto:nelson.rmontalvan@gmail.com" class="text-gray-400 hover:text-sky-400 transition" title="Enviar Email"><i class="bi bi-envelope-at"></i>
 </a>
             </div>
-            <p class="text-gray-500 text-xs text-center">© 2026 Software Project Manager & Solutions Architect.</p>
+                
         </div>
     </footer>
 
